@@ -1,0 +1,52 @@
+---
+title: "DSNY 311 data"
+output: html_document
+---
+
+ 
+```{r}
+# Loaded data
+# Select relevant columns
+# Mutate "Created Date" to extract year 
+# Filter for 2015-2020
+# Filter for relevant 311 complaints
+# Remove rows with value "NA". Eliminates 3,653 311 complaints.
+library(tidyverse)
+
+dsny311 <- read_csv("311_Service_Requests2.csv") %>%
+  select(created_date = "Created Date", complaint_type = "Complaint Type", borough = "City", descriptor = "Descriptor", lat = "Latitude", long = "Longitude") %>%
+    mutate(created_date = str_replace_all(created_date, "AM", "")) %>%
+  mutate(created_date = str_replace_all(created_date, "PM", "")) %>%
+  mutate(created_date = str_replace_all(created_date, ":", "")) %>%
+  mutate(created_date = str_replace_all(created_date, "/", "_")) %>%
+  mutate(created_date = str_replace_all(created_date, " ", "_")) %>%
+  separate(created_date, c("month", "day", "year", "delete")) %>%
+  select(year, complaint_type, descriptor, borough, lat, long) %>%
+  filter(year == "2015"| year == "2016"| year == "2017"|year == "2018"| year == "2019"| year == "2020") %>%
+  filter(complaint_type == "Recycling Enforcement" |complaint_type == "Other Enforcement" |complaint_type == "Sanitation Condition" |complaint_type == "Dirty Condition" |complaint_type == "Missed Collection" |complaint_type == "Overflowing Litter Baskets" |complaint_type == "Dirty Conditions" |complaint_type == "Missed Collection (All Materials)" |complaint_type == "Overflowing Recycling Basket" |complaint_type == "Litter Basket / Request" |complaint_type == "Collection Truck Noise") %>%
+  filter(descriptor == "1 Missed Collection" |descriptor == "E12 Illegal Dumping Surveillance" |descriptor == "E3B Sidewalk Obstruction" |descriptor == "E5 Loose Rubbish" |descriptor == "10 Litter Basket / Request" |descriptor == "1R Missed Recycling-All Materials" |descriptor == "6 Overflowing Litter Baskets" |descriptor == "E10 Obstruction (Street/Sidewalk)" |descriptor == "E11 Litter Surveillance" |descriptor == "E2 Receptacle Violation") %>%
+  na.omit()
+```
+
+```{r}
+# Export .csv
+
+write_csv(dsny311, "dsny311.csv")
+```
+
+```{r}
+# Imported dsny311.csv into QGIS. Used coordinate information to add correct Borough and Community District information. 
+# Grouped by year and boro and found descriptor count
+
+dsny311_cd_b <- read_csv("311Requests_boro_cd.csv")
+
+dsny311_counts <- dsny311_cd_b %>%
+  select(year, descriptor, boro_name) %>%
+  filter(boro_name == "Bronx" |boro_name == "Brooklyn" |boro_name == "Manhattan" |boro_name == "Queens" |boro_name == "Staten Island")%>%
+  group_by(year,boro_name) %>%
+  count(descriptor)%>%
+  select(year, boro_name, descriptor, count = "n")
+  
+write_csv(dsny311_counts, "dsny311_counts.csv")
+```
+

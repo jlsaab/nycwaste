@@ -1,0 +1,124 @@
+---
+title: "NYC Population (2015-2019)"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+
+```{r}
+# Cleaning population data for analysis
+# Select boro/cd column and total population column
+# Clean boro/cd column
+library(tidyverse)
+
+pop2015 <- read_csv("ACS_2015pop.csv") %>%
+  select(name = "NAME", total_pop = "DP05_0001E") %>%
+  mutate(name = str_replace_all(name, " ", "")) %>%
+  mutate(name = str_replace_all(name, "District", "District_")) %>%
+  mutate(name = str_replace_all(name, "Community", "_Community")) %>%
+  mutate(name = str_replace_all(name, "NYC-", "")) %>%
+  mutate(name = str_replace_all(name, "--", "_")) %>%
+  mutate(name = str_replace_all(name, "-", "")) %>%
+  mutate(name = str_replace_all(name, ",", "")) %>%
+  mutate(name = str_replace_all(name, "&", "0")) %>%
+  separate(name, c("borough", "cd", "community_district", "neighborhood" )) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "0", "&")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "PUMA", "")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "NewYork", "")) %>%
+  select(borough, community_district, neighborhood, total_pop) %>%
+  mutate(borough_district = str_c(borough, "_", community_district))
+
+pop2016 <- read_csv("ACS_2016pop.csv") %>%
+  select(name = "NAME", total_pop = "DP05_0001E") %>%
+  mutate(name = str_replace_all(name, " ", "")) %>%
+  mutate(name = str_replace_all(name, "District", "District_")) %>%
+  mutate(name = str_replace_all(name, "Community", "_Community")) %>%
+  mutate(name = str_replace_all(name, "NYC-", "")) %>%
+  mutate(name = str_replace_all(name, "--", "_")) %>%
+  mutate(name = str_replace_all(name, "-", "")) %>%
+  mutate(name = str_replace_all(name, ",", "")) %>%
+  mutate(name = str_replace_all(name, "&", "0")) %>%
+  separate(name, c("borough", "cd", "community_district", "neighborhood" )) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "0", "&")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "PUMA", "")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "NewYork", "")) %>%
+  select(borough, community_district, neighborhood, total_pop)%>%
+  mutate(borough_district = str_c(borough, "_", community_district))
+
+
+pop2017 <- read_csv("ACS_2017pop.csv") %>%
+  select(name = "NAME", total_pop = "DP05_0001E") %>%
+  mutate(name = str_replace_all(name, " ", "")) %>%
+  mutate(name = str_replace_all(name, "District", "District_")) %>%
+  mutate(name = str_replace_all(name, "Community", "_Community")) %>%
+  mutate(name = str_replace_all(name, "NYC-", "")) %>%
+  mutate(name = str_replace_all(name, "--", "_")) %>%
+  mutate(name = str_replace_all(name, "-", "")) %>%
+  mutate(name = str_replace_all(name, ",", "")) %>%
+  mutate(name = str_replace_all(name, "&", "0")) %>%
+  separate(name, c("borough", "cd", "community_district", "neighborhood" )) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "0", "&")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "PUMA", "")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "NewYork", "")) %>%
+  select(borough, community_district, neighborhood, total_pop)%>%
+  mutate(borough_district = str_c(borough, "_", community_district))
+
+pop2018 <- read_csv("ACS_2018pop.csv") %>%
+  select(name = "NAME", total_pop = "DP05_0001E") %>%
+  mutate(name = str_replace_all(name, " ", "")) %>%
+  mutate(name = str_replace_all(name, "District", "District_")) %>%
+  mutate(name = str_replace_all(name, "Community", "_Community")) %>%
+  mutate(name = str_replace_all(name, "NYC-", "")) %>%
+  mutate(name = str_replace_all(name, "--", "_")) %>%
+  mutate(name = str_replace_all(name, "-", "")) %>%
+  mutate(name = str_replace_all(name, ",", "")) %>%
+  mutate(name = str_replace_all(name, "&", "0")) %>%
+  separate(name, c("borough", "cd", "community_district", "neighborhood" )) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "0", "&")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "PUMA", "")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "NewYork", "")) %>%
+  select(borough, community_district, neighborhood, total_pop)%>%
+  mutate(borough_district = str_c(borough, "_", community_district))
+
+pop2019 <- read_csv("ACS_2019pop.csv") %>%
+  select(name = "NAME", total_pop = "DP05_0001E") %>%
+  mutate(name = str_replace_all(name, " ", "")) %>%
+  mutate(name = str_replace_all(name, "District", "District_")) %>%
+  mutate(name = str_replace_all(name, "Community", "_Community")) %>%
+  mutate(name = str_replace_all(name, "NYC-", "")) %>%
+  mutate(name = str_replace_all(name, "--", "_")) %>%
+  mutate(name = str_replace_all(name, "-", "")) %>%
+  mutate(name = str_replace_all(name, ",", "")) %>%
+  mutate(name = str_replace_all(name, "&", "0")) %>%
+  separate(name, c("borough", "cd", "community_district", "neighborhood" )) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "0", "&")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "PUMA", "")) %>%
+  mutate(neighborhood = str_replace_all(neighborhood, "NewYork", "")) %>%
+  select(borough, community_district, neighborhood, total_pop)%>%
+  mutate(borough_district = str_c(borough, "_", community_district))
+```
+
+
+```{r}
+# Merge 2015 - 2020 population data into a single data frame
+pop_only_2015 <- select(pop2015, community_district = "borough_district", pop_2015 = "total_pop") 
+pop_only_2016 <- select(pop2016, community_district = "borough_district", pop_2016 = "total_pop")
+pop_only_2017 <- select(pop2017, community_district = "borough_district", pop_2017 = "total_pop")
+pop_only_2018 <- select(pop2018, community_district = "borough_district", pop_2018 = "total_pop")
+pop_only_2019 <- select(pop2019, community_district = "borough_district", pop_2019 = "total_pop")
+
+pop15_16 <- merge(pop_only_2015, pop_only_2016, by="community_district") 
+pop15_16_17 <- merge(pop15_16, pop_only_2017, by="community_district") 
+pop15_16_17_18 <- merge(pop15_16_17, pop_only_2018, by="community_district") 
+cd_pop_change <- merge(pop15_16_17_18, pop_only_2019, by="community_district") 
+```
+
+```{r}
+write_csv(cd_pop_change,"pop_2015_2020.csv")
+```
+
+
+
+

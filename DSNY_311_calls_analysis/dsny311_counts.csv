@@ -1,0 +1,269 @@
+year,boro_name,descriptor,count
+2015,Bronx,1 Missed Collection,786
+2015,Bronx,10 Litter Basket / Request,253
+2015,Bronx,1R Missed Recycling-All Materials,200
+2015,Bronx,6 Overflowing Litter Baskets,170
+2015,Bronx,E10 Obstruction (Street/Sidewalk),185
+2015,Bronx,E11 Litter Surveillance,254
+2015,Bronx,E12 Illegal Dumping Surveillance,410
+2015,Bronx,E2 Receptacle Violation,87
+2015,Bronx,E3B Sidewalk Obstruction,11
+2015,Bronx,E5 Loose Rubbish,124
+2015,Brooklyn,1 Missed Collection,3552
+2015,Brooklyn,10 Litter Basket / Request,955
+2015,Brooklyn,1R Missed Recycling-All Materials,866
+2015,Brooklyn,6 Overflowing Litter Baskets,419
+2015,Brooklyn,E10 Obstruction (Street/Sidewalk),714
+2015,Brooklyn,E11 Litter Surveillance,344
+2015,Brooklyn,E12 Illegal Dumping Surveillance,1161
+2015,Brooklyn,E2 Receptacle Violation,514
+2015,Brooklyn,E3B Sidewalk Obstruction,23
+2015,Brooklyn,E5 Loose Rubbish,438
+2015,Manhattan,1 Missed Collection,1064
+2015,Manhattan,10 Litter Basket / Request,610
+2015,Manhattan,1R Missed Recycling-All Materials,260
+2015,Manhattan,6 Overflowing Litter Baskets,446
+2015,Manhattan,E10 Obstruction (Street/Sidewalk),642
+2015,Manhattan,E11 Litter Surveillance,163
+2015,Manhattan,E12 Illegal Dumping Surveillance,298
+2015,Manhattan,E2 Receptacle Violation,279
+2015,Manhattan,E3B Sidewalk Obstruction,30
+2015,Manhattan,E5 Loose Rubbish,226
+2015,Queens,1 Missed Collection,3807
+2015,Queens,10 Litter Basket / Request,498
+2015,Queens,1R Missed Recycling-All Materials,1717
+2015,Queens,6 Overflowing Litter Baskets,317
+2015,Queens,E10 Obstruction (Street/Sidewalk),652
+2015,Queens,E11 Litter Surveillance,383
+2015,Queens,E12 Illegal Dumping Surveillance,948
+2015,Queens,E2 Receptacle Violation,320
+2015,Queens,E3B Sidewalk Obstruction,19
+2015,Queens,E5 Loose Rubbish,344
+2015,Staten Island,1 Missed Collection,1987
+2015,Staten Island,10 Litter Basket / Request,179
+2015,Staten Island,1R Missed Recycling-All Materials,835
+2015,Staten Island,6 Overflowing Litter Baskets,121
+2015,Staten Island,E10 Obstruction (Street/Sidewalk),101
+2015,Staten Island,E11 Litter Surveillance,70
+2015,Staten Island,E12 Illegal Dumping Surveillance,139
+2015,Staten Island,E2 Receptacle Violation,115
+2015,Staten Island,E3B Sidewalk Obstruction,3
+2015,Staten Island,E5 Loose Rubbish,120
+2016,Bronx,1 Missed Collection,859
+2016,Bronx,10 Litter Basket / Request,202
+2016,Bronx,1R Missed Recycling-All Materials,236
+2016,Bronx,6 Overflowing Litter Baskets,91
+2016,Bronx,E11 Litter Surveillance,183
+2016,Bronx,E12 Illegal Dumping Surveillance,458
+2016,Bronx,E2 Receptacle Violation,122
+2016,Bronx,E3B Sidewalk Obstruction,176
+2016,Bronx,E5 Loose Rubbish,115
+2016,Brooklyn,1 Missed Collection,3489
+2016,Brooklyn,10 Litter Basket / Request,1049
+2016,Brooklyn,1R Missed Recycling-All Materials,953
+2016,Brooklyn,6 Overflowing Litter Baskets,286
+2016,Brooklyn,E11 Litter Surveillance,288
+2016,Brooklyn,E12 Illegal Dumping Surveillance,1304
+2016,Brooklyn,E2 Receptacle Violation,471
+2016,Brooklyn,E3B Sidewalk Obstruction,567
+2016,Brooklyn,E5 Loose Rubbish,417
+2016,Manhattan,1 Missed Collection,1077
+2016,Manhattan,10 Litter Basket / Request,523
+2016,Manhattan,1R Missed Recycling-All Materials,225
+2016,Manhattan,6 Overflowing Litter Baskets,322
+2016,Manhattan,E11 Litter Surveillance,132
+2016,Manhattan,E12 Illegal Dumping Surveillance,261
+2016,Manhattan,E2 Receptacle Violation,367
+2016,Manhattan,E3B Sidewalk Obstruction,573
+2016,Manhattan,E5 Loose Rubbish,208
+2016,Queens,1 Missed Collection,3916
+2016,Queens,10 Litter Basket / Request,521
+2016,Queens,1R Missed Recycling-All Materials,1784
+2016,Queens,6 Overflowing Litter Baskets,226
+2016,Queens,E11 Litter Surveillance,325
+2016,Queens,E12 Illegal Dumping Surveillance,1100
+2016,Queens,E2 Receptacle Violation,376
+2016,Queens,E3B Sidewalk Obstruction,481
+2016,Queens,E5 Loose Rubbish,348
+2016,Staten Island,1 Missed Collection,2022
+2016,Staten Island,10 Litter Basket / Request,189
+2016,Staten Island,1R Missed Recycling-All Materials,924
+2016,Staten Island,6 Overflowing Litter Baskets,114
+2016,Staten Island,E11 Litter Surveillance,67
+2016,Staten Island,E12 Illegal Dumping Surveillance,165
+2016,Staten Island,E2 Receptacle Violation,138
+2016,Staten Island,E3B Sidewalk Obstruction,64
+2016,Staten Island,E5 Loose Rubbish,124
+2017,Bronx,1 Missed Collection,942
+2017,Bronx,10 Litter Basket / Request,278
+2017,Bronx,1R Missed Recycling-All Materials,316
+2017,Bronx,6 Overflowing Litter Baskets,156
+2017,Bronx,E11 Litter Surveillance,147
+2017,Bronx,E12 Illegal Dumping Surveillance,415
+2017,Bronx,E2 Receptacle Violation,120
+2017,Bronx,E3B Sidewalk Obstruction,187
+2017,Bronx,E5 Loose Rubbish,130
+2017,Brooklyn,1 Missed Collection,4354
+2017,Brooklyn,10 Litter Basket / Request,1126
+2017,Brooklyn,1R Missed Recycling-All Materials,1333
+2017,Brooklyn,6 Overflowing Litter Baskets,203
+2017,Brooklyn,E11 Litter Surveillance,275
+2017,Brooklyn,E12 Illegal Dumping Surveillance,1079
+2017,Brooklyn,E2 Receptacle Violation,497
+2017,Brooklyn,E3B Sidewalk Obstruction,707
+2017,Brooklyn,E5 Loose Rubbish,426
+2017,Manhattan,1 Missed Collection,1052
+2017,Manhattan,10 Litter Basket / Request,680
+2017,Manhattan,1R Missed Recycling-All Materials,236
+2017,Manhattan,6 Overflowing Litter Baskets,264
+2017,Manhattan,E11 Litter Surveillance,121
+2017,Manhattan,E12 Illegal Dumping Surveillance,193
+2017,Manhattan,E2 Receptacle Violation,357
+2017,Manhattan,E3B Sidewalk Obstruction,760
+2017,Manhattan,E5 Loose Rubbish,227
+2017,Queens,1 Missed Collection,4054
+2017,Queens,10 Litter Basket / Request,536
+2017,Queens,1R Missed Recycling-All Materials,1630
+2017,Queens,6 Overflowing Litter Baskets,301
+2017,Queens,E11 Litter Surveillance,374
+2017,Queens,E12 Illegal Dumping Surveillance,889
+2017,Queens,E2 Receptacle Violation,307
+2017,Queens,E3B Sidewalk Obstruction,592
+2017,Queens,E5 Loose Rubbish,345
+2017,Staten Island,1 Missed Collection,2387
+2017,Staten Island,10 Litter Basket / Request,147
+2017,Staten Island,1R Missed Recycling-All Materials,1132
+2017,Staten Island,6 Overflowing Litter Baskets,83
+2017,Staten Island,E11 Litter Surveillance,72
+2017,Staten Island,E12 Illegal Dumping Surveillance,161
+2017,Staten Island,E2 Receptacle Violation,111
+2017,Staten Island,E3B Sidewalk Obstruction,101
+2017,Staten Island,E5 Loose Rubbish,126
+2018,Bronx,1 Missed Collection,1186
+2018,Bronx,10 Litter Basket / Request,349
+2018,Bronx,1R Missed Recycling-All Materials,421
+2018,Bronx,6 Overflowing Litter Baskets,156
+2018,Bronx,E11 Litter Surveillance,171
+2018,Bronx,E12 Illegal Dumping Surveillance,443
+2018,Bronx,E2 Receptacle Violation,123
+2018,Bronx,E3B Sidewalk Obstruction,249
+2018,Bronx,E5 Loose Rubbish,166
+2018,Brooklyn,1 Missed Collection,5079
+2018,Brooklyn,10 Litter Basket / Request,1405
+2018,Brooklyn,1R Missed Recycling-All Materials,1564
+2018,Brooklyn,6 Overflowing Litter Baskets,153
+2018,Brooklyn,E11 Litter Surveillance,290
+2018,Brooklyn,E12 Illegal Dumping Surveillance,938
+2018,Brooklyn,E2 Receptacle Violation,425
+2018,Brooklyn,E3B Sidewalk Obstruction,787
+2018,Brooklyn,E5 Loose Rubbish,490
+2018,Manhattan,1 Missed Collection,1101
+2018,Manhattan,10 Litter Basket / Request,584
+2018,Manhattan,1R Missed Recycling-All Materials,240
+2018,Manhattan,6 Overflowing Litter Baskets,236
+2018,Manhattan,E11 Litter Surveillance,141
+2018,Manhattan,E12 Illegal Dumping Surveillance,213
+2018,Manhattan,E2 Receptacle Violation,292
+2018,Manhattan,E3B Sidewalk Obstruction,770
+2018,Manhattan,E5 Loose Rubbish,238
+2018,Queens,1 Missed Collection,5181
+2018,Queens,10 Litter Basket / Request,564
+2018,Queens,1R Missed Recycling-All Materials,2167
+2018,Queens,6 Overflowing Litter Baskets,258
+2018,Queens,E11 Litter Surveillance,351
+2018,Queens,E12 Illegal Dumping Surveillance,851
+2018,Queens,E2 Receptacle Violation,268
+2018,Queens,E3B Sidewalk Obstruction,657
+2018,Queens,E5 Loose Rubbish,367
+2018,Staten Island,1 Missed Collection,2924
+2018,Staten Island,10 Litter Basket / Request,171
+2018,Staten Island,1R Missed Recycling-All Materials,1301
+2018,Staten Island,6 Overflowing Litter Baskets,87
+2018,Staten Island,E11 Litter Surveillance,76
+2018,Staten Island,E12 Illegal Dumping Surveillance,141
+2018,Staten Island,E2 Receptacle Violation,149
+2018,Staten Island,E3B Sidewalk Obstruction,145
+2018,Staten Island,E5 Loose Rubbish,139
+2019,Bronx,1 Missed Collection,1076
+2019,Bronx,10 Litter Basket / Request,168
+2019,Bronx,1R Missed Recycling-All Materials,353
+2019,Bronx,6 Overflowing Litter Baskets,102
+2019,Bronx,E11 Litter Surveillance,59
+2019,Bronx,E12 Illegal Dumping Surveillance,111
+2019,Bronx,E2 Receptacle Violation,94
+2019,Bronx,E3B Sidewalk Obstruction,101
+2019,Bronx,E5 Loose Rubbish,116
+2019,Brooklyn,1 Missed Collection,5013
+2019,Brooklyn,10 Litter Basket / Request,599
+2019,Brooklyn,1R Missed Recycling-All Materials,1444
+2019,Brooklyn,6 Overflowing Litter Baskets,69
+2019,Brooklyn,E11 Litter Surveillance,124
+2019,Brooklyn,E12 Illegal Dumping Surveillance,346
+2019,Brooklyn,E2 Receptacle Violation,317
+2019,Brooklyn,E3B Sidewalk Obstruction,424
+2019,Brooklyn,E5 Loose Rubbish,372
+2019,Manhattan,1 Missed Collection,1181
+2019,Manhattan,10 Litter Basket / Request,196
+2019,Manhattan,1R Missed Recycling-All Materials,255
+2019,Manhattan,6 Overflowing Litter Baskets,129
+2019,Manhattan,E11 Litter Surveillance,59
+2019,Manhattan,E12 Illegal Dumping Surveillance,86
+2019,Manhattan,E2 Receptacle Violation,213
+2019,Manhattan,E3B Sidewalk Obstruction,395
+2019,Manhattan,E5 Loose Rubbish,147
+2019,Queens,1 Missed Collection,4155
+2019,Queens,10 Litter Basket / Request,248
+2019,Queens,1R Missed Recycling-All Materials,1689
+2019,Queens,6 Overflowing Litter Baskets,96
+2019,Queens,E11 Litter Surveillance,145
+2019,Queens,E12 Illegal Dumping Surveillance,296
+2019,Queens,E2 Receptacle Violation,217
+2019,Queens,E3B Sidewalk Obstruction,289
+2019,Queens,E5 Loose Rubbish,227
+2019,Staten Island,1 Missed Collection,3105
+2019,Staten Island,10 Litter Basket / Request,62
+2019,Staten Island,1R Missed Recycling-All Materials,1330
+2019,Staten Island,6 Overflowing Litter Baskets,42
+2019,Staten Island,E11 Litter Surveillance,38
+2019,Staten Island,E12 Illegal Dumping Surveillance,59
+2019,Staten Island,E2 Receptacle Violation,165
+2019,Staten Island,E3B Sidewalk Obstruction,58
+2019,Staten Island,E5 Loose Rubbish,109
+2020,Bronx,1 Missed Collection,1246
+2020,Bronx,10 Litter Basket / Request,1
+2020,Bronx,1R Missed Recycling-All Materials,368
+2020,Bronx,E11 Litter Surveillance,1
+2020,Bronx,E12 Illegal Dumping Surveillance,5
+2020,Bronx,E2 Receptacle Violation,117
+2020,Bronx,E3B Sidewalk Obstruction,2
+2020,Bronx,E5 Loose Rubbish,154
+2020,Brooklyn,1 Missed Collection,5631
+2020,Brooklyn,1R Missed Recycling-All Materials,2019
+2020,Brooklyn,6 Overflowing Litter Baskets,3
+2020,Brooklyn,E11 Litter Surveillance,5
+2020,Brooklyn,E12 Illegal Dumping Surveillance,8
+2020,Brooklyn,E2 Receptacle Violation,417
+2020,Brooklyn,E3B Sidewalk Obstruction,24
+2020,Brooklyn,E5 Loose Rubbish,484
+2020,Manhattan,1 Missed Collection,1143
+2020,Manhattan,10 Litter Basket / Request,2
+2020,Manhattan,1R Missed Recycling-All Materials,221
+2020,Manhattan,6 Overflowing Litter Baskets,6
+2020,Manhattan,E11 Litter Surveillance,1
+2020,Manhattan,E2 Receptacle Violation,168
+2020,Manhattan,E3B Sidewalk Obstruction,3
+2020,Manhattan,E5 Loose Rubbish,214
+2020,Queens,1 Missed Collection,5322
+2020,Queens,1R Missed Recycling-All Materials,2091
+2020,Queens,6 Overflowing Litter Baskets,1
+2020,Queens,E11 Litter Surveillance,2
+2020,Queens,E12 Illegal Dumping Surveillance,8
+2020,Queens,E2 Receptacle Violation,255
+2020,Queens,E3B Sidewalk Obstruction,5
+2020,Queens,E5 Loose Rubbish,286
+2020,Staten Island,1 Missed Collection,3915
+2020,Staten Island,1R Missed Recycling-All Materials,1657
+2020,Staten Island,E12 Illegal Dumping Surveillance,2
+2020,Staten Island,E2 Receptacle Violation,130
+2020,Staten Island,E3B Sidewalk Obstruction,2
+2020,Staten Island,E5 Loose Rubbish,92
