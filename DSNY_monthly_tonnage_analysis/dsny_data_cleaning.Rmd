@@ -1,0 +1,292 @@
+---
+title: "prep_DSNY_2"
+output: html_document
+---
+```{r}
+library(dplyr)
+library(readr)
+library(janitor)
+library(tidyverse)
+```
+
+ # DSNY Monthly Tonnage Data - https://data.cityofnewyork.us/City-Government/DSNY-Monthly-Tonnage-Data/ebb7-mvp5
+ 
+```{r}
+tonnage_raw <- read_csv("DSNY_Monthly_Tonnage_Data.csv")
+```
+
+```{r}
+tonnage_clean <- clean_names(tonnage_raw)
+```
+ # arranging data by year 
+```{r}
+tonnage_sorted <- arrange(tonnage_clean, month)
+```
+ # splitting the column to separate year from month 
+```{r}
+adj_tonnage <- separate(tonnage_sorted, month, into = c("years", "months"),sep = "/")
+```
+ # filtering to keep data from 2015 - 2020 
+```{r}
+recent_tonnage <- filter(adj_tonnage, years > 2015)
+recent_tonnage <- filter(recent_tonnage, years < 2021)
+```
+ # group and summarize to see volume of trash by borough
+```{r}
+boro_tonnage <- group_by(recent_tonnage, borough_id)
+boro_tonnage <- summarize(boro_tonnage, total_tonnage = sum(refusetonscollected))
+boro_tonnage <- ungroup(boro_tonnage)
+boro_tonnage
+```
+
+ # have to filter by borough and then community district (CD) to compare CD refuse produced 
+
+ # filtering out manhattan CD total refuse 
+
+```{r}
+mh_tonnage <- filter(recent_tonnage, borough_id ==1)
+mh_dist_tonnage <- group_by(mh_tonnage, communitydistrict)
+mh_dist_tonnage <- summarize(mh_dist_tonnage, total_tonnage = sum(refusetonscollected))
+mh_dist_tonnage <- ungroup(mh_dist_tonnage)
+mh_dist_tonnage
+```
+
+ # filtering out brooklyn CD total refuse 
+
+```{r}
+bk_tonnage <- filter(recent_tonnage, borough_id ==3)
+bk_dist_tonnage <- group_by(bk_tonnage, communitydistrict)
+bk_dist_tonnage <- summarize(bk_dist_tonnage, total_tonnage = sum(refusetonscollected))
+bk_dist_tonnage <- ungroup(bk_dist_tonnage)
+bk_dist_tonnage
+```
+
+ # filtering out queens CD total refuse 
+ 
+```{r}
+ qn_tonnage <- filter(recent_tonnage, borough_id ==4)
+ qn_dist_tonnage <- group_by(qn_tonnage, communitydistrict)
+ qn_dist_tonnage <- summarize(qn_dist_tonnage, total_tonnage = sum(refusetonscollected))
+ qn_dist_tonnage <- ungroup(qn_dist_tonnage)
+ qn_dist_tonnage
+```
+
+ # filtering out bronx CD total refuse 
+
+```{r}
+ bx_tonnage <- filter(recent_tonnage, borough_id ==2)
+ bx_dist_tonnage <- group_by(bx_tonnage, communitydistrict)
+  bx_dist_tonnage <- summarize(bx_dist_tonnage, total_tonnage = sum(refusetonscollected))
+ bx_dist_tonnage <- ungroup(bx_dist_tonnage)
+ bx_dist_tonnage
+```
+
+ # filtering out for staten island CD total refuse 
+
+```{r}
+st_tonnage <- filter(recent_tonnage, borough_id ==5)
+st_dist_tonnage <- group_by(st_tonnage, communitydistrict)
+st_dist_tonnage <- summarize(st_dist_tonnage, total_tonnage = sum(refusetonscollected))
+st_dist_tonnage <- ungroup(st_dist_tonnage)
+st_dist_tonnage
+```
+
+ # sorting data to evaluate total paper recyclables collected by borough 
+
+```{r}
+boro_papers <- group_by(recent_tonnage, borough_id)
+boro_papers <- summarize(boro_papers, total_papers = sum(papertonscollected))
+boro_papers <- ungroup(boro_papers)
+boro_papers
+```
+
+ # filtering out paper recycling by manhattan community districts
+
+```{r}
+mh_papers <- filter(recent_tonnage, borough_id ==1)
+mh_dist_papers <- group_by(mh_papers, communitydistrict)
+mh_dist_papers <- summarize(mh_dist_papers, total_papers = sum(papertonscollected))
+mh_dist_papers <- ungroup(mh_dist_papers)
+mh_dist_papers
+```
+
+  # filtering out paper recycling by brooklyn community districts
+
+```{r}
+bk_papers <- filter(recent_tonnage, borough_id ==3)
+bk_dist_papers <- group_by(bk_papers, communitydistrict)
+bk_dist_papers <- summarize(bk_dist_papers, total_tonnage = sum(papertonscollected))
+bk_dist_papers <- ungroup(bk_dist_papers)
+bk_dist_papers
+```
+
+ # filtering out paper recycling by queens community districts 
+
+```{r}
+ qn_papers <- filter(recent_tonnage, borough_id ==4)
+ qn_dist_papers <- group_by(qn_papers, communitydistrict)
+ qn_dist_papers <- summarize(qn_dist_papers, total_tonnage = sum(papertonscollected))
+ qn_dist_papers <- ungroup(qn_dist_papers)
+ qn_dist_papers
+```
+
+ # filtering out bronx recycling by community district 
+
+```{r}
+bx_papers <- filter(recent_tonnage, borough_id ==2)
+bx_dist_papers <- group_by(bx_papers, communitydistrict)
+bx_dist_papers <- summarize(bx_dist_papers, total_tonnage = sum(papertonscollected))
+bx_dist_papers <- ungroup(bx_dist_papers)
+bx_dist_papers
+```
+
+ # filtering out staten island paper recycling by CD
+
+```{r}
+st_papers <- filter(recent_tonnage, borough_id ==5)
+st_dist_papers <- group_by(st_papers, communitydistrict)
+st_dist_papers <- summarize(st_dist_papers, total_tonnage = sum(papertonscollected))
+st_dist_papers <- ungroup(st_dist_papers)
+st_dist_papers
+```
+
+ # creating new column summing up total waste, total_waste
+
+```{r}
+recent_tonnage2 <- mutate(recent_tonnage, 
+                          total_waste = papertonscollected + refusetonscollected + mgptonscollected)
+```
+
+```{r}
+write_csv(boro_tonnage, "C:\\Users\\Michelle\\Desktop\\boro_tonnage.csv")
+```
+```{r}
+write_csv(recent_tonnage2, "C:\\Users\\Michelle\\Desktop\\full_dsny_clean.csv")
+```
+
+ # breaking out total waste and total paper recycling by borough 
+
+```{r}
+boro_waste <- group_by(recent_tonnage2, borough_id)
+boro_waste <- summarize(boro_waste, total_waste_boro = sum(total_waste))
+boro_waste <- ungroup(boro_waste)
+boro_waste
+
+boro_papers <-group_by(recent_tonnage2, borough_id)
+boro_papers <- summarize(boro_papers, total_papers = sum(papertonscollected))
+boro_papers <- ungroup(boro_papers)
+boro_papers
+```
+
+```{r}
+write_csv(boro_waste, "C:\\Users\\Michelle\\Desktop\\total_waste_by_boro.csv")
+write_csv(boro_papers, "C:\\Users\\Michelle\\Desktop\\total_paper_rec_by_boro.csv")
+```
+
+```{r}
+write_csv(mh_dist_papers, "C:\\Users\\Michelle\\Desktop\\mh_total_paper_rec_by_dist.csv")
+write_csv(mh_dist_tonnage, "C:\\Users\\Michelle\\Desktop\\mh_total_tonnage_by_dist.csv")
+
+write_csv(bx_dist_papers, "C:\\Users\\Michelle\\Desktop\\bx_total_paper_rec_by_dist.csv")
+write_csv(bx_dist_tonnage, "C:\\Users\\Michelle\\Desktop\\bx_total_tonnage_by_dist.csv")
+
+write_csv(bk_dist_papers, "C:\\Users\\Michelle\\Desktop\\bk_total_paper_rec_by_dist.csv")
+write_csv(bk_dist_tonnage, "C:\\Users\\Michelle\\Desktop\\bk_total_tonnage_by_dist.csv")
+
+write_csv(qn_dist_papers, "C:\\Users\\Michelle\\Desktop\\qn_total_paper_rec_by_dist.csv")
+write_csv(qn_dist_tonnage, "C:\\Users\\Michelle\\Desktop\\qn_total_tonnage_by_dist.csv")
+
+write_csv(st_dist_papers, "C:\\Users\\Michelle\\Desktop\\st_total_paper_rec_by_dist.csv")
+write_csv(st_dist_tonnage, "C:\\Users\\Michelle\\Desktop\\st_total_tonnage_by_dist.csv")
+```
+
+ # creating new column, rec_total, to represent total recyclables collected 
+ 
+```{r}
+recent_tonnage3 <- mutate(recent_tonnage2, 
+                          rec_total = papertonscollected +  mgptonscollected)
+```
+
+```{r}
+write_csv(recent_tonnage3, "C:\\Users\\Michelle\\Desktop\\total_data_updated.csv")
+```
+
+ # breaking out total trash (x_totals) and total recyclables (x_recs)by CD
+
+```{r}
+st_totals <- filter(recent_tonnage3, borough_id ==5)
+st_totals <- group_by(st_totals, communitydistrict)
+st_totals <- summarize(st_totals, total_trash = sum(total_waste))
+st_totals <- ungroup(st_totals)
+st_totals
+```
+
+```{r}
+st_recs <- filter(recent_tonnage3, borough_id ==5)
+st_recs <- group_by(st_recs, communitydistrict)
+st_recs <- summarize(st_recs, total_rec = sum(rec_total))
+st_recs <- ungroup(st_recs)
+st_recs
+```
+
+```{r}
+bx_totals <- filter(recent_tonnage3, borough_id ==2)
+bx_totals <- group_by(bx_totals, communitydistrict)
+bx_totals <- summarize(bx_totals, total_trash = sum(total_waste))
+bx_totals <- ungroup(bx_totals)
+bx_totals
+```
+
+```{r}
+bx_recs <- filter(recent_tonnage3, borough_id ==2)
+bx_recs <- group_by(bx_recs, communitydistrict)
+bx_recs <- summarize(bx_recs, total_rec = sum(rec_total))
+bx_recs <- ungroup(bx_recs)
+bx_recs
+```
+
+```{r}
+bk_totals_dist <- filter(recent_tonnage3, borough_id ==3)
+bk_totals_dist <- group_by(bk_totals_dist, communitydistrict)
+bk_totals_dist <- summarize(bk_totals_dist, total_trash = sum(total_waste))
+bk_totals_dist <- ungroup(bk_totals_dist)
+bk_totals_dist
+```
+```{r}
+bk_recs_dist <- filter(recent_tonnage3, borough_id ==3)
+bk_recs_dist <- group_by(bk_recs_dist, communitydistrict)
+bk_recs_dist <- summarize(bk_recs_dist, total_rec = sum(rec_total))
+bk_recs_dist <- ungroup(bk_recs_dist)
+bk_recs_dist
+```
+```{r}
+mh_totals_dist <- filter(recent_tonnage3, borough_id ==1)
+mh_totals_dist <- group_by(mh_totals_dist, communitydistrict)
+mh_totals_dist <- summarize(mh_totals_dist, total_trash = sum(total_waste))
+mh_totals_dist <- ungroup(mh_totals_dist)
+mh_totals_dist
+```
+```{r}
+mh_recs_dist <- filter(recent_tonnage3, borough_id ==1)
+mh_recs_dist <- group_by(mh_recs_dist, communitydistrict)
+mh_recs_dist <- summarize(mh_recs_dist, total_rec = sum(rec_total))
+mh_recs_dist <- ungroup(mh_recs_dist)
+mh_recs_dist
+```
+```{r}
+qn_totals_dist <- filter(recent_tonnage3, borough_id ==4)
+qn_totals_dist <- group_by(qn_totals_dist, communitydistrict)
+qn_totals_dist <- summarize(qn_totals_dist, total_trash = sum(total_waste))
+qn_totals_dist <- ungroup(qn_totals_dist)
+qn_totals_dist
+```
+```{r}
+qn_recs_dist <- filter(recent_tonnage3, borough_id ==4)
+qn_recs_dist <- group_by(qn_recs_dist, communitydistrict)
+qn_recs_dist <- summarize(qn_recs_dist, total_rec = sum(rec_total))
+qn_recs_dist <- ungroup(qn_recs_dist)
+qn_recs_dist
+```
+
+
+
